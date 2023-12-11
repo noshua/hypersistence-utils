@@ -1,7 +1,7 @@
 package io.hypersistence.utils.hibernate.type.basic;
 
-import io.hypersistence.utils.hibernate.type.ImmutableDynamicParameterizedType;
 import io.hypersistence.utils.common.ReflectionUtils;
+import io.hypersistence.utils.hibernate.type.ImmutableDynamicParameterizedType;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.metamodel.model.convert.spi.EnumValueConverter;
@@ -27,6 +27,7 @@ import java.util.Properties;
  *
  * @author Vlad Mihalcea
  */
+@Deprecated
 public class PostgreSQLEnumType extends ImmutableDynamicParameterizedType<Enum> {
 
     public static final PostgreSQLEnumType INSTANCE = new PostgreSQLEnumType();
