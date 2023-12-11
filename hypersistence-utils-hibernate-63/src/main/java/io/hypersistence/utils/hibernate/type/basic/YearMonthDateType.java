@@ -4,7 +4,6 @@ import io.hypersistence.utils.hibernate.type.DescriptorImmutableType;
 import io.hypersistence.utils.hibernate.type.basic.internal.YearMonthTypeDescriptor;
 import io.hypersistence.utils.hibernate.type.util.Configuration;
 import org.hibernate.HibernateException;
-import org.hibernate.metamodel.model.domain.DomainType;
 import org.hibernate.type.descriptor.jdbc.DateJdbcType;
 
 import java.time.YearMonth;
@@ -48,10 +47,5 @@ public class YearMonthDateType extends DescriptorImmutableType<YearMonth, DateJd
     @Override
     public YearMonth fromStringValue(CharSequence charSequence) throws HibernateException {
         return charSequence != null ? YearMonth.parse(charSequence) : null;
-    }
-
-    @Override
-    public DomainType<YearMonth> getSqmType() {
-        return null;
     }
 }

@@ -3,7 +3,6 @@ package io.hypersistence.utils.hibernate.type.money;
 import io.hypersistence.utils.hibernate.type.DescriptorImmutableType;
 import io.hypersistence.utils.hibernate.type.money.internal.CurrencyUnitTypeDescriptor;
 import org.hibernate.HibernateException;
-import org.hibernate.metamodel.model.domain.DomainType;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
 import javax.money.CurrencyUnit;
@@ -21,10 +20,5 @@ public class CurrencyUnitType extends DescriptorImmutableType<CurrencyUnit, Varc
     @Override
     public CurrencyUnit fromStringValue(CharSequence sequence) throws HibernateException {
         return getExpressibleJavaType().wrap(sequence, null);
-    }
-
-    @Override
-    public DomainType<CurrencyUnit> getSqmType() {
-        return null;
     }
 }

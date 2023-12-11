@@ -4,7 +4,6 @@ import io.hypersistence.utils.hibernate.type.DescriptorImmutableType;
 import io.hypersistence.utils.hibernate.type.basic.internal.ZoneIdTypeDescriptor;
 import io.hypersistence.utils.hibernate.type.util.Configuration;
 import org.hibernate.HibernateException;
-import org.hibernate.metamodel.model.domain.DomainType;
 import org.hibernate.type.descriptor.jdbc.VarcharJdbcType;
 
 import java.time.ZoneId;
@@ -46,10 +45,5 @@ public class ZoneIdType extends DescriptorImmutableType<ZoneId, VarcharJdbcType,
     @Override
     public ZoneId fromStringValue(CharSequence charSequence) throws HibernateException {
         return charSequence != null ? ZoneId.of((String) charSequence) : null;
-    }
-
-    @Override
-    public DomainType<ZoneId> getSqmType() {
-        return null;
     }
 }

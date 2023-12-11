@@ -4,7 +4,6 @@ import io.hypersistence.utils.hibernate.type.DescriptorImmutableType;
 import io.hypersistence.utils.hibernate.type.basic.internal.YearTypeDescriptor;
 import io.hypersistence.utils.hibernate.type.util.Configuration;
 import org.hibernate.HibernateException;
-import org.hibernate.metamodel.model.domain.DomainType;
 import org.hibernate.type.descriptor.jdbc.SmallIntJdbcType;
 
 import java.time.Year;
@@ -48,10 +47,5 @@ public class YearType extends DescriptorImmutableType<Year, SmallIntJdbcType, Ye
     @Override
     public Year fromStringValue(CharSequence charSequence) throws HibernateException {
         return charSequence != null ? Year.parse(charSequence) : null;
-    }
-
-    @Override
-    public DomainType<Year> getSqmType() {
-        return null;
     }
 }

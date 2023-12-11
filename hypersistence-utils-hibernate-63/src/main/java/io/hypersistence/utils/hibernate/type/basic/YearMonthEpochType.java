@@ -4,7 +4,6 @@ import io.hypersistence.utils.hibernate.type.DescriptorImmutableType;
 import io.hypersistence.utils.hibernate.type.basic.internal.YearMonthEpochTypeDescriptor;
 import io.hypersistence.utils.hibernate.type.util.Configuration;
 import org.hibernate.HibernateException;
-import org.hibernate.metamodel.model.domain.DomainType;
 import org.hibernate.type.descriptor.jdbc.SmallIntJdbcType;
 
 import java.time.YearMonth;
@@ -47,10 +46,5 @@ public class YearMonthEpochType extends DescriptorImmutableType<YearMonth, Small
     @Override
     public YearMonth fromStringValue(CharSequence charSequence) throws HibernateException {
         return charSequence != null ? YearMonth.parse(charSequence) : null;
-    }
-
-    @Override
-    public DomainType<YearMonth> getSqmType() {
-        return null;
     }
 }

@@ -4,7 +4,6 @@ import io.hypersistence.utils.hibernate.type.DescriptorImmutableType;
 import io.hypersistence.utils.hibernate.type.basic.internal.MonthDayTypeDescriptor;
 import io.hypersistence.utils.hibernate.type.util.Configuration;
 import org.hibernate.HibernateException;
-import org.hibernate.metamodel.model.domain.DomainType;
 import org.hibernate.type.descriptor.jdbc.IntegerJdbcType;
 
 import java.time.MonthDay;
@@ -46,10 +45,5 @@ public class MonthDayIntegerType extends DescriptorImmutableType<MonthDay, Integ
     @Override
     public MonthDay fromStringValue(CharSequence sequence) throws HibernateException {
         return sequence != null ? MonthDay.parse(sequence) : null;
-    }
-
-    @Override
-    public DomainType<MonthDay> getSqmType() {
-        return null;
     }
 }

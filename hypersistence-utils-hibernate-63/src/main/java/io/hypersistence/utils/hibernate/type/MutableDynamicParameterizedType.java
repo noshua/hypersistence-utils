@@ -41,6 +41,6 @@ public class MutableDynamicParameterizedType<T, JDBC extends JdbcType, JAVA exte
 
     @Override
     public DomainType<T> getSqmType() {
-        return null;
+        return this;
     }
 }
